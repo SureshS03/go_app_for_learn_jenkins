@@ -18,7 +18,7 @@ pipeline{
         stage('Build'){
             steps{
                 sh '''
-                cd go_app_for_learn_jenkins
+                ls -a
                 echo "building app"
                 go run main.go
                 '''
