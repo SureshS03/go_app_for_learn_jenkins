@@ -4,11 +4,14 @@ pipeline{
             label 'build_go_app'
         }
     }
+    triggers {
+        pollSCM 'H/5 * * * *'
+    }
     stages{
         stage('Clone'){
             steps{
                 sh '''
-                git clone https://github.com/SureshS03/go_app_for_learn_jenkins.git
+                echo "clone will automatically done by SCM poll"
                 '''
             }
         }
